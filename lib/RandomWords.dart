@@ -18,7 +18,6 @@ class RandomWordsState extends State<RandomWords> {
           IconButton(
             icon: Icon(
               Icons.list,
-              color: Colors.white,
             ),
             onPressed: () => _pushSavedWords(),
           )
