@@ -43,11 +43,22 @@ class RandomWordsState extends State<RandomWords> {
     final bool isWordAlreadySaved = _savedWords.contains(wordPair);
 
     return ListTile(
-      title: Text(wordPair.asPascalCase),
+      title: Text(
+        wordPair.asPascalCase,
+      ),
       trailing: Icon(
         isWordAlreadySaved ? Icons.favorite : Icons.favorite_border,
         color: isWordAlreadySaved ? Colors.red : null,
       ),
+      onTap: () {
+        setState(() {
+          if (isWordAlreadySaved) {
+            _savedWords.remove(wordPair);
+          } else {
+            _savedWords.add(wordPair);
+          }
+        });
+      },
     );
   }
 }

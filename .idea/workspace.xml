@@ -29,8 +29,8 @@
       <file leaf-file-name="RandomWords.dart" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lib/RandomWords.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="596">
-              <caret line="43" lean-forward="true" selection-start-line="43" selection-end-line="43" />
+            <state relative-caret-position="397">
+              <caret line="53" column="10" selection-start-line="53" selection-start-column="10" selection-end-line="53" selection-end-column="10" />
               <folding>
                 <element signature="e#0#50#0" expanded="true" />
               </folding>
@@ -194,9 +194,9 @@
       <window_info anchor="right" id="Palette&#9;" order="3" />
       <window_info id="Image Layers" order="2" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3681592" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3681592" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.2" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.2" />
       <window_info id="Captures" order="2" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1773163" />
       <window_info anchor="right" id="Theme Preview" order="3" />
@@ -286,8 +286,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/RandomWords.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="596">
-          <caret line="43" lean-forward="true" selection-start-line="43" selection-end-line="43" />
+        <state relative-caret-position="397">
+          <caret line="53" column="10" selection-start-line="53" selection-start-column="10" selection-end-line="53" selection-end-column="10" />
           <folding>
             <element signature="e#0#50#0" expanded="true" />
           </folding>
