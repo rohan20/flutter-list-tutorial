@@ -7,9 +7,41 @@ class RandomWords extends StatefulWidget {
 }
 
 class RandomWordsState extends State<RandomWords> {
+  final List<WordPair> _suggestions = [];
+
   @override
   Widget build(BuildContext context) {
-    final randomWord = WordPair.random().asPascalCase;
-    return new Text(randomWord);
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Lazy List"),
+      ),
+      body: _buildSuggestions(),
+    );
+  }
+
+  _buildSuggestions() {
+
+    return ListView.builder(
+      padding: const EdgeInsets.all(16.0),
+      itemBuilder: (context, i) {
+        if (i.isOdd) {
+          return Divider();
+        }
+
+        final int index = i ~/ 2;
+
+        if (index >= _suggestions.length) {
+          _suggestions.addAll(generateWordPairs().take(50));
+        }
+
+        return _buildRow(_suggestions[index]);
+      },
+    );
+  }
+
+  _buildRow(WordPair wordPair) {
+    return ListTile(
+      title: Text(wordPair.asPascalCase),
+    );
   }
 }
