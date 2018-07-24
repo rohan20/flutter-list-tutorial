@@ -40,7 +40,7 @@ class RandomWordsState extends State<RandomWords> {
         final int index = i ~/ 2;
 
         if (index >= _allWordsList.length) {
-          _allWordsList.addAll(generateWordPairs().take(50));
+          _allWordsList.addAll(generateWordPairs().take(10));
         }
 
         return _buildRow(_allWordsList[index]);
