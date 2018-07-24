@@ -95,9 +95,16 @@ class RandomWordsState extends State<RandomWords> {
           appBar: AppBar(
             title: const Text("Saved Words"),
           ),
-          body: ListView(
-            children: wordPlusDividerTilesList,
-          ),
+          body: wordPlusDividerTilesList.isEmpty
+              ? Center(
+                  child: Text(
+                    "No saved words",
+                    style: Theme.of(context).textTheme.headline,
+                  ),
+                )
+              : ListView(
+                  children: wordPlusDividerTilesList,
+                ),
         );
       },
     ));
