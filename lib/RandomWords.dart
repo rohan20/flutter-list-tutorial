@@ -20,7 +20,7 @@ class RandomWordsState extends State<RandomWords> {
               Icons.list,
               color: Colors.white,
             ),
-            onPressed: _pushSavedWords(),
+            onPressed: () => _pushSavedWords(),
           )
         ],
         title: Text("Lazy List"),
@@ -71,5 +71,35 @@ class RandomWordsState extends State<RandomWords> {
     );
   }
 
-  _pushSavedWords() {}
+  _pushSavedWords() {
+    Navigator.of(context).push(MaterialPageRoute<void>(
+      builder: (context) {
+        final Iterable<ListTile> wordTiles = _savedWords.map(
+          (WordPair wordPair) {
+            return ListTile(
+              title: Text(
+                wordPair.asPascalCase,
+              ),
+            );
+          },
+        );
+
+        final List<Widget> wordPlusDividerTilesList = ListTile
+            .divideTiles(
+              context: context,
+              tiles: wordTiles,
+            )
+            .toList();
+
+        return Scaffold(
+          appBar: AppBar(
+            title: const Text("Saved Words"),
+          ),
+          body: ListView(
+            children: wordPlusDividerTilesList,
+          ),
+        );
+      },
+    ));
+  }
 }
