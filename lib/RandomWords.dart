@@ -7,13 +7,22 @@ class RandomWords extends StatefulWidget {
 }
 
 class RandomWordsState extends State<RandomWords> {
-  final List<WordPair> _suggestions = [];
+  final List<WordPair> _allWordsList = [];
   final Set<WordPair> _savedWords = Set<WordPair>();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        actions: <Widget>[
+          IconButton(
+            icon: Icon(
+              Icons.list,
+              color: Colors.white,
+            ),
+            onPressed: _pushSavedWords(),
+          )
+        ],
         title: Text("Lazy List"),
       ),
       body: _buildSuggestions(),
@@ -30,11 +39,11 @@ class RandomWordsState extends State<RandomWords> {
 
         final int index = i ~/ 2;
 
-        if (index >= _suggestions.length) {
-          _suggestions.addAll(generateWordPairs().take(50));
+        if (index >= _allWordsList.length) {
+          _allWordsList.addAll(generateWordPairs().take(50));
         }
 
-        return _buildRow(_suggestions[index]);
+        return _buildRow(_allWordsList[index]);
       },
     );
   }
@@ -61,4 +70,6 @@ class RandomWordsState extends State<RandomWords> {
       },
     );
   }
+
+  _pushSavedWords() {}
 }
